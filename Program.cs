@@ -9,12 +9,7 @@ namespace pllug
         public static void Main(string[] args)
         {
             Door a = new Door(2, 3);
-            System.Console.WriteLine(a.Height);
-            System.Console.WriteLine(a.Width);
-            a.Height = 4;
-            a.Width = 5;
-            System.Console.WriteLine(a.Height);
-            System.Console.WriteLine(a.Width);
+           
         }
     }
 }
