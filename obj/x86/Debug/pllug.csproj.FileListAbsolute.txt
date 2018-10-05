@@ -1,0 +1,6 @@
+/Users/ostapkutyanskij/Projects/pllug/pllug/bin/Debug/pllug.exe
+/Users/ostapkutyanskij/Projects/pllug/pllug/bin/Debug/pllug.pdb
+/Users/ostapkutyanskij/Projects/pllug/pllug/obj/x86/Debug/pllug.csprojAssemblyReference.cache
+/Users/ostapkutyanskij/Projects/pllug/pllug/obj/x86/Debug/pllug.csproj.CoreCompileInputs.cache
+/Users/ostapkutyanskij/Projects/pllug/pllug/obj/x86/Debug/pllug.exe
+/Users/ostapkutyanskij/Projects/pllug/pllug/obj/x86/Debug/pllug.pdb
