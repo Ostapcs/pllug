@@ -8,19 +8,33 @@ namespace pllug
 
     class MainClass
     {
-        public static bool isRightSizeSquare(SquareDoor squareDoor ,RectangularObject rectangularObject)
+        public static bool isRightSize(SquareDoor squareDoor ,RectangularObject rectangularObject)
         {
                 if (rectangularObject.Height > squareDoor.Height)
                     return ((rectangularObject.Width < squareDoor.Width && rectangularObject.Depth < squareDoor.Height) ||
                             (rectangularObject.Width < squareDoor.Height && rectangularObject.Depth < squareDoor.Width));
                 
-                else if (rectangularObject.Width > squareDoor.Width)
+                if (rectangularObject.Width > squareDoor.Width)
                     return rectangularObject.Width < squareDoor.Height && rectangularObject.Depth < squareDoor.Width;
-                
-                else
-                    return true;
+            
+                return true;
         }
         
+        public static bool isRightSize(SquareDoor squareDoor, BarrelObject barrelObject )
+        {
+            if (barrelObject.Height > squareDoor.Height)
+                return (barrelObject.Diameter < squareDoor.Width && barrelObject.Diameter < squareDoor.Height);
+
+            if (barrelObject.Diameter > squareDoor.Width)
+                return false;
+            
+            return true;
+        }
+
+        public static bool isRightSize(SquareDoor squareDoor, BallObject ballObject)
+        {
+            return squareDoor.Height > ballObject.Diameter && squareDoor.Width > ballObject.Diameter;
+        }
         
 
         public static void UserInterface()
@@ -90,7 +104,7 @@ namespace pllug
 
                     var obj = new RectangularObject(height, width, depth);
 
-                    Console.WriteLine(isRightSizeSquare(door, obj) ? "Everything is ok" : "Object is bigger");
+                    Console.WriteLine(isRightSize(door, obj) ? "Everything is ok" : "Object is bigger");
                 }
                 else if (objShape == "barrel")
                 {
@@ -104,8 +118,50 @@ namespace pllug
                     double diameter = double.Parse(input);
 
                     var obj = new BarrelObject(height, diameter);
+                    
+                    Console.WriteLine(isRightSize(door, obj) ? "Everything is ok" : "Object is bigger");
 
                 }
+                else
+                {
+                    Console.WriteLine("Enter the size of Object :");
+                    Console.WriteLine("Diameter : ");
+                    input = Console.ReadLine();
+                    double diameter = double.Parse(input);
+                    
+                    var obj = new BallObject(diameter);
+
+                    Console.WriteLine(isRightSize(door, obj) ? "Everything is ok" : "Object is bigger");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Enter the size of door :");
+                Console.WriteLine("Diameter: ");
+                var input = Console.ReadLine();
+                double diameter = double.Parse(input);
+                var door = new RoundDoor(diameter);
+
+                if (objShape == "rectangular")
+                {
+                    Console.WriteLine("Enter the size of Object :");
+                    Console.WriteLine("Height : ");
+                    input = Console.ReadLine();
+                    var height = double.Parse(input);
+
+                    Console.WriteLine("Width : ");
+                    input = Console.ReadLine();
+                    var width = double.Parse(input);
+
+                    Console.WriteLine("Depth : ");
+                    input = Console.ReadLine();
+                    var depth = double.Parse(input);
+
+                    var obj = new RectangularObject(height, width, depth);
+                    
+                    
+                }
+                
             }
         }
 
