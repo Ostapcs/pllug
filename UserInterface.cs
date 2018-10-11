@@ -5,7 +5,7 @@ namespace pllug
 {
     class UserInterface
     {
-        public static bool isRightSize(SquareDoor squareDoor ,RectangularObject rectangularObject)
+        public static bool isRightSize(SquareDoor squareDoor ,RectangularObject rectangularObject)// перевіряє норм двері і "шафу"
         {
                 if (rectangularObject.Height >= squareDoor.Height)
                     return ((rectangularObject.Width < squareDoor.Width && rectangularObject.Depth < squareDoor.Height) ||
@@ -17,7 +17,7 @@ namespace pllug
                 return true;
         }
         
-        public static bool isRightSize(SquareDoor squareDoor, BarrelObject barrelObject )
+        public static bool isRightSize(SquareDoor squareDoor, BarrelObject barrelObject )// перевіряє норм двері і бочку
         {
             if (barrelObject.Height > squareDoor.Height)
                 return (barrelObject.Diameter < squareDoor.Width && barrelObject.Diameter < squareDoor.Height);
@@ -28,12 +28,12 @@ namespace pllug
             return true;
         }
 
-        public static bool isRightSize(SquareDoor squareDoor, BallObject ballObject)
+        public static bool isRightSize(SquareDoor squareDoor, BallObject ballObject) // перевіряє норм двері і куля/сфера
         {
             return squareDoor.Height > ballObject.Diameter && squareDoor.Width > ballObject.Diameter;
         }
 
-        public static bool isRightSize(RoundDoor roundDoor, RectangularObject rectangularObject)
+        public static bool isRightSize(RoundDoor roundDoor, RectangularObject rectangularObject) // перевіряє круглі двері і "шафу"
         {
             if (roundDoor.Diameter < rectangularObject.Height)
             {
@@ -58,12 +58,12 @@ namespace pllug
             }
         }
 
-        public static bool isRightSize(RoundDoor roundDoor, BarrelObject barrelObject)
+        public static bool isRightSize(RoundDoor roundDoor, BarrelObject barrelObject) // перевіряє круглі двері і бочку
         {   
              return roundDoor.Diameter > barrelObject.Diameter;  
         }
 
-        public static bool isRightSize(RoundDoor roundDoor, BallObject ballObject)
+        public static bool isRightSize(RoundDoor roundDoor, BallObject ballObject) // перевіряє круглі двері і кулю/ сферу 
         {
             return roundDoor.Diameter > ballObject.Diameter;
         }
@@ -87,8 +87,7 @@ namespace pllug
                 }
             }
 
-            Console.WriteLine("Enter Shape of Object");
-            Console.WriteLine("Enter rectangle or barrel or ball");
+            Console.WriteLine("Enter Shape of Object: rectangle, barrel or ball");
             var objShape = Console.ReadLine();
             while (true)
             {
