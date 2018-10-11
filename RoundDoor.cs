@@ -1,17 +1,48 @@
+using System;
+
 namespace pllug
 {
-    class RoundDoor
+    class RoundDoor : AbstractDoor
     {
-        public double Diameter { get; private set; }
-
-        public RoundDoor()
+        public RoundDoor(double diameter) : base(diameter)
         {
             
         }
 
-        public RoundDoor(double diameter)
+        public override bool isRightSize(RectangularObject rectangularObject)
         {
-            Diameter = diameter;
+            if (Diameter < rectangularObject.Height)
+            {
+                double diagonal =
+                    Math.Sqrt(Math.Pow(rectangularObject.Width, 2) + Math.Pow(rectangularObject.Depth, 2));
+
+                return Diameter > diagonal;
+            }
+            if (Diameter < rectangularObject.Width)
+            {
+                double diagonal =
+                    Math.Sqrt(Math.Pow(rectangularObject.Height, 2) + Math.Pow(rectangularObject.Depth, 2));
+
+                return Diameter > diagonal;
+            }
+            else
+            {
+                double diagonal =
+                    Math.Sqrt(Math.Pow(rectangularObject.Width, 2) + Math.Pow(rectangularObject.Height, 2));
+
+                return Diameter > diagonal;
+            }        
+        }
+
+        public override bool isRightSize(BarrelObject barrelObject)
+        {
+            return Diameter > barrelObject.Diameter;
+            
+        }
+
+        public override bool isRightSize(BallObject ballObject)
+        {
+            return Diameter > ballObject.Diameter;
         }
     }
 }

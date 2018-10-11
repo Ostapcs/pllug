@@ -7,8 +7,7 @@ namespace pllug
     {
         public static void Main(string[] args)
         {
-            UserInterface.usrinterface();
-           
+            UserInterface.usrinterface();           
         }
     }
 }
