@@ -39,6 +39,7 @@
     <Compile Include="RoundDoor.cs" />
     <Compile Include="SquareDoor.cs" />
     <Compile Include="RectangularObject.cs" />
+    <Compile Include="UserInterface.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
