@@ -84,6 +84,8 @@ namespace pllug
                     Console.WriteLine(
                         "Enter the shape of a door again. You can choose normal rectangular or round door.");
                     doorChoice = Console.ReadLine();
+                    continue;
+                    
                 }
             }
 
@@ -98,7 +100,9 @@ namespace pllug
                 else
                 {
                     Console.WriteLine("Enter the shape of an object again. You can choose rectangle, barrel or ball.");
-                    doorChoice = Console.ReadLine();
+                    objShape = Console.ReadLine();
+                    continue;
+                    
                 }
             }
 
