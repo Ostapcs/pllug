@@ -1,8 +1,8 @@
 namespace pllug
 {
-    class BallObject
+    class BallObject : AbstractObject
     {
-        public double Diameter { get; private set; }
+       
 
         public BallObject(double d)
         {

@@ -32,6 +32,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractObject.cs" />
     <Compile Include="AbstractDoor.cs" />
     <Compile Include="BallObject.cs" />
     <Compile Include="BarrelObject.cs" />
